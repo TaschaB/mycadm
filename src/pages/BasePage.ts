@@ -1,0 +1,11 @@
+import { Page } from '@playwright/test';
+
+export abstract class BasePage {
+    constructor(protected page: Page) {}
+
+    async clickNavigationLink(linkName: string) {
+        await this.page
+            .getByRole("link", { name: linkName })
+            .click();
+    }
+}
