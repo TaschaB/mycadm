@@ -8,7 +8,7 @@ Feature: Landing Page
 @landing02
   Scenario: Click top Nav Bar About Link
     Given I open the MyCADM homepage
-    When I click top nav bar "About" Link
+    When I click top nav bar "About" Link 2
     Then I navigate to "About mycadm" Page
 
 @landing03
