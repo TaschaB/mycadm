@@ -1,4 +1,5 @@
 Feature: Landing Page
+@landingPage
 
 @landing01
   Scenario: Open MyCADM homepage
@@ -20,7 +21,7 @@ Feature: Landing Page
 @landing04
   Scenario: Click Sign In Button
     Given I open the MyCADM homepage
-    When I click "Sign In" button
+    When I click "app.landing.button.signin" button
     Then I navigate to "Sign in" Page
 
 @landing05
