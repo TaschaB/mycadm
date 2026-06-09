@@ -1,0 +1,11 @@
+{
+  "qa": {
+    "baseUrl": "N/A"
+  },
+  "stage": {
+    "baseUrl": "N/A"
+  },
+  "prod": {
+    "baseUrl": "https://mycadm.com/"
+  }
+}
