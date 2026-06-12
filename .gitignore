@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Reports
+reports/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+
+# Screenshots
+screenshots/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
