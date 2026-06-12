@@ -83,3 +83,31 @@ Feature: Landing Page
     When I decline Cookies
     When I click bottom "Contact Us" Link
     Then I navigate to "Contact Us" Page
+
+# ---- NEGATIVE TEST CASES -----
+@landingNegative01
+Scenario: Cookie banner does not block footer navigation after declining cookies
+  Given I open the MyCADM homepage
+  When I decline Cookies
+  Then the footer navigation should be accessible
+
+  @landingNegative02
+Scenario: Invalid automation key does not navigate away from landing page
+  Given I open the MyCADM homepage
+  When I try to click "app.landing.button.fake" button
+  Then I should remain on the MyCADM homepage
+
+  @landingNegative05
+Scenario: Cookie banner decline action is safe when banner is not visible
+  Given I open the MyCADM homepage
+  When I decline Cookies
+  When I decline Cookies
+  Then the landing page should be displayed
+
+  @landingNegative06
+Scenario: Required landing page call-to-action buttons are not missing
+  Given I open the MyCADM homepage
+  Then the "app.landing.button.signin" button should be visible
+  And the "app.landing.hero.button.signup" button should be visible
+  And the "app.landing.pricing.button.signup" button should be visible
+  And the "app.landing.cta.button.signup" button should be visible

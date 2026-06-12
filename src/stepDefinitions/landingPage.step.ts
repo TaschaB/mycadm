@@ -35,3 +35,17 @@ When(
       await landingPage.clickFooterNavLink(linkName);
   }
 );
+
+When('I try to click {string} button', async function (this: CustomWorld, automationKey: string) {
+  const button = this.page.locator(`[data-automation-key="${automationKey}"]`);
+
+  if (await button.isVisible().catch(() => false)) {
+    await button.click();
+  }
+});
+
+Then ('I should remain on the MyCADM homepage', async function (this: CustomWorld){
+  const landingPageVerify = new LandingPageVerify(this.page);
+  await landingPageVerify.verifyLandingPageIsDisplayed();
+}
+)
