@@ -4,7 +4,7 @@ import { BasePage } from './BasePage';
 export default class LandingPageVerify {
   constructor(private page: Page) {}
   async verifyLandingPageIsDisplayed() {
-    await expect(this.page.getByText('Example Domain')).toBeVisible();
+    await expect(this.page.getByText('help you find jobs.')).toBeVisible();
   }
 }
 export class LandingPage extends BasePage {
