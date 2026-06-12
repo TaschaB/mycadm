@@ -32,7 +32,6 @@ When(
   async function (this: CustomWorld, linkName: string) {
 
       const landingPage = new LandingPage(this.page);
-
       await landingPage.clickFooterNavLink(linkName);
   }
 );

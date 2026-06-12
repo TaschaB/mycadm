@@ -29,6 +29,13 @@ Use when:
 * Running only a subset of tests
 * Excluding work-in-progress tests
 
+### Pause the Test
+    (Add right before the failing line)
+    await this.page.pause();
+
+Use When: 
+* need to keep the browser open during debug
+
 ### Open Test Report
 Opens the generated HTML report.
 

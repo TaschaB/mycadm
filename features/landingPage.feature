@@ -28,52 +28,58 @@ Feature: Landing Page
   Scenario: Click First Opt Res Button
     Given I open the MyCADM homepage
     When I click "app.landing.hero.button.signup" button
-    Then I navigate to "Free Trial" Page
+    Then I navigate to "Your free trial includes:" Page
 
 @landing06
   Scenario: Click First Opt Res Button 2
     Given I open the MyCADM homepage
     When I click "app.landing.pricing.button.signup" button
-    Then I navigate to "Free Trial" Page
+    Then I navigate to "Your free trial includes:" Page
 
 @landing07
   Scenario: Click Free Trial button
     Given I open the MyCADM homepage
     When I click "app.landing.cta.button.signup" button
-    Then I navigate to "Free Trial" Page
+    Then I navigate to "Your free trial includes:" Page
 
 @landing08
   Scenario: Click bottom About Link
     Given I open the MyCADM homepage
+    When I decline Cookies
     When I click bottom "About" Link
     Then I navigate to "About mycadm" Page
 
 @landing09
   Scenario: Click bottom Privacy Link
     Given I open the MyCADM homepage
+    When I decline Cookies
     When I click bottom "Privacy" Link
     Then I navigate to "Privacy & Trust" Page
 
 @landing10
   Scenario: Click bottom Terms Link
     Given I open the MyCADM homepage
+    When I decline Cookies
     When I click bottom "Terms" Link
-    Then I navigate to "Terms of Service" Page
+    Then I navigate to "11. Governing Law" Page
 
 @landing11
   Scenario: Click bottom Cookies Link
     Given I open the MyCADM homepage
+    When I decline Cookies
     When I click bottom "Cookies" Link
-    Then I navigate to "Cookie Policy" Page
+    Then I navigate to "Updates to This Policy" Page
 
 @landing12
   Scenario: Click bottom Disclaimer Link
     Given I open the MyCADM homepage
+    When I decline Cookies
     When I click bottom "Disclaimer" Link
     Then I navigate to "Disclaimer" Page
 
 @landing13
   Scenario: Click bottom Disclaimer Link
     Given I open the MyCADM homepage
+    When I decline Cookies
     When I click bottom "Contact Us" Link
     Then I navigate to "Contact Us" Page
