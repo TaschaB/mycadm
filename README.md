@@ -1,4 +1,4 @@
-# MyCADM Playwright Automation Framework
+# MyCADM Playwright QA Automation Framework
 
 A lightweight end-to-end automation framework built with Playwright, TypeScript, and Cucumber/Gherkin.
 
