@@ -49,3 +49,18 @@ Then ('I should remain on the MyCADM homepage', async function (this: CustomWorl
   await landingPageVerify.verifyLandingPageIsDisplayed();
 }
 )
+
+Then('the footer navigation should be accessible', async function () {
+  const landingPage = new LandingPage(this.page);
+
+  await landingPage.footerNavigationShouldBeAccessible();
+});
+
+Then(
+  'the {string} button should be visible',
+  async function (automationKey: string) {
+    const landingPage = new LandingPage(this.page);
+
+    await landingPage.verifyButtonIsVisible(automationKey);
+  }
+);

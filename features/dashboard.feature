@@ -1,3 +1,34 @@
 #generate scenarios for the three differet nav bar options
 #collapsing sidebar still allows navigation
 #
+
+# --- LITE DASHBOARD ---
+  # DASHBOARD
+  # RESUMES
+  # COVER LETTERS
+  # SETTINGS
+  # ADMIN
+  # GIVE FEEDBACK (HA!)
+  # GETTING STARTED BASICS
+
+# --- EXPERT DASHBOARD ---
+  # DASHBOARD
+  # APPLICATIONS
+  # INTERVIEWS
+  # JOBS
+  # RESUMES
+  # COVER LETTERS
+  # SETTINGS
+  # ADMIN
+  # GIVE FEEDBACK
+  # GETTING STARTED BASICS
+
+# --- CAREER DASHBOARD --- 
+  # CAREER
+  # RESUMES
+  # SETTINGS
+  # ADMIN
+  # GIVE FEEDBACK
+  # GETTING STARTED GUIDE
+
+# --- LEFT SIDE NAV BAR FOOT NAVIGATION
