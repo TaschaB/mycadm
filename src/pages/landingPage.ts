@@ -1,4 +1,4 @@
-import { expect, Page } from '@playwright/test';
+import { expect, Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export default class LandingPageVerify {
@@ -23,5 +23,16 @@ export class LandingPage extends BasePage {
         .getByLabel('Footer navigation')
         .getByRole('link', { name: linkName })
         .click();
+}
+async footerNavigationShouldBeAccessible(): Promise<void> {
+  const footerNavigation = this.page.getByLabel('Footer navigation');
+
+  await expect(footerNavigation).toBeVisible();
+  await expect(footerNavigation).toBeEnabled();
+}
+async verifyButtonIsVisible(automationKey: string): Promise<void> {
+  await expect(
+    this.page.locator(`[data-automation="${automationKey}"]`)
+  ).toBeVisible();
 }
 }

@@ -1,0 +1,35 @@
+{
+  "Cucumber Given": {
+    "prefix": "cgiven",
+    "body": [
+      "Given('${1:step text}', async function () {",
+      "  $0",
+      "});"
+    ]
+  },
+  "Cucumber When": {
+    "prefix": "cwhen",
+    "body": [
+      "When('${1:step text}', async function () {",
+      "  $0",
+      "});"
+    ]
+  },
+  "Cucumber Then": {
+    "prefix": "cthen",
+    "body": [
+      "Then('${1:step text}', async function () {",
+      "  $0",
+      "});"
+    ]
+  },
+   "Cucumber And": {
+    "prefix": "cand",
+    "body": [
+      "And('${1:step text}', async function () {",
+      "  $0",
+      "});"
+    ]
+  }
+}
+
