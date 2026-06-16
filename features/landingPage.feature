@@ -108,6 +108,6 @@ Scenario: Cookie banner decline action is safe when banner is not visible
 Scenario: Required landing page call-to-action buttons are not missing
   Given I open the MyCADM homepage
   Then the "app.landing.button.signin" button should be visible
-  And the "app.landing.hero.button.signup" button should be visible
+  Then the "app.landing.hero.button.signup" button should be visible
   And the "app.landing.pricing.button.signup" button should be visible
   And the "app.landing.cta.button.signup" button should be visible
