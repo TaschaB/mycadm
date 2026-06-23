@@ -48,3 +48,39 @@ When('I sign enter only username', async function () {
   await signInPage.clickSignIn();
 
 });
+
+When('I sign enter leading username', async function () {
+      const signInPage = new SignInPage(this.page);
+
+await signInPage.login(
+  users.validUsernameLeadingSpace.username,
+  users.validUser.password
+);
+});
+
+When('I sign enter trailing username', async function () {
+      const signInPage = new SignInPage(this.page);
+
+await signInPage.login(
+  users.validUsernameTrailingSpace.username,
+  users.validUser.password
+);
+});
+
+When('I sign enter leading password', async function () {
+      const signInPage = new SignInPage(this.page);
+
+await signInPage.login(
+  users.validUser.username,
+  users.validUsernameLeadingSpace.password
+);
+});
+
+When('I sign enter trailing password', async function () {
+      const signInPage = new SignInPage(this.page);
+
+await signInPage.login(
+  users.validUser.username,
+  users.validUsernameTrailingSpace.password
+);
+});
