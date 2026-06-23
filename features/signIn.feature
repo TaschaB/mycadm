@@ -57,10 +57,37 @@ Scenario: Failed Sign In - blank username and password
     When I click "app.auth.button.signin" button
     Then I should see a banner saying "Please fill in all fields"
 
-# username validation - leading spaces
-# username validation - trailing spaces
-# password validation - leading spaces
-# password validation - trailing spaces
+@signin8
+  Scenario: username validation - leading spaces
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign enter leading username
+    Then I should see a banner saying "Sign in failed" 
+    
+@signin9
+  Scenario: username validation - trailing spaces
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign enter trailing username
+    Then I should see a banner saying "Sign in failed" 
+
+@signin10
+  Scenario: password validation - leading spaces
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign enter leading password
+    Then I should see a banner saying "Sign in failed" 
+
+@signin11
+Scenario: password validation - trailing spaces
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign enter trailing password
+    Then I should see a banner saying "Sign in failed" 
 
 # username validation - maximum length
 # username validation - exceeds maximum length
