@@ -2,5 +2,9 @@
   "validUser": {
     "username": "taschaqa@outlook.com",
     "password": "19Mar2025!"
+  },
+  "invalidUser": {
+    "username": "kjbvbglkk@kjdgbf.com",
+    "password": "lhngbvlksd"
   }
 }

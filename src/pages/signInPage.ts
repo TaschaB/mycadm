@@ -1,5 +1,5 @@
 import { Page, expect } from '@playwright/test';
-import { BasePage } from './basePage';
+import { BasePage } from './BasePage';
 
 export class SignInPage extends BasePage {
   constructor(page: Page) {
@@ -7,15 +7,15 @@ export class SignInPage extends BasePage {
   }
 
   async enterUsername(username: string): Promise<void> {
-    await this.page.getByLabel('Username').fill(username);
+    await this.page.getByTestId('app.auth.form.email.input').fill(username);
   }
 
   async enterPassword(password: string): Promise<void> {
-    await this.page.getByLabel('Password').fill(password);
+    await this.page.getByTestId('app.auth.form.password.input').fill(password);
   }
 
   async clickSignIn(): Promise<void> {
-    await this.page.getByRole('button', { name: 'Sign in' }).click();
+    await this.page.getByTestId('app.auth.button.signin').click();
   }
 
   async login(username: string, password: string): Promise<void> {

@@ -2,6 +2,7 @@ import { When,Then, Given } from '@cucumber/cucumber';
 import { CustomWorld } from '../support/world';
 import { LandingPage } from '../pages/landingPage';
 import { SignInPage } from '../pages/signInPage';
+import { BannerPage } from '../pages/BannerPage';
 import users from '../data/users.json';
 
 When(
@@ -26,4 +27,10 @@ Given('I am signed in as a valid user', async function () {
     users.validUser.username,
     users.validUser.password
   );
+});
+
+Then('I should see a banner saying {string}', async function (message: string) {
+  const bannerPage = new BannerPage(this.page);
+
+  await bannerPage.verifyBannerText(message);
 });

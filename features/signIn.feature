@@ -1,10 +1,61 @@
-# successful login
-# failed login - wrong password
-# failed login - unknown username
-# failed login - wrong username and password
-# failed login - blank username
-# failed login - blank password
-# failed login - blank username and password
+Feature: Sign In Scenarios
+ @signin
+
+@signin1
+  Scenario: Successful Sign In
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    Given I am signed in as a valid user
+    Then I navigate to "Dashboard" Page
+    
+@signin2
+  Scenario: Failed Sign in - wrong password
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign in with a invalid password
+    Then I should see a banner saying "Sign in failed" 
+
+@signin3
+  Scenario: Failed Sign in - wrong username
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign in with a invalid username
+    Then I should see a banner saying "Sign in failed" 
+
+@signin4
+  Scenario: Failed Sign in - wrong username and password
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign in with a invalid credentials
+    Then I should see a banner saying "Sign in failed" 
+
+@signin5
+  Scenario: Failed Sign in - blank username
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign enter only password
+    Then I should see a banner saying "Please fill in all fields"
+
+@signin6
+  Scenario: Failed Sign In - blank password
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I sign enter only username
+    Then I should see a banner saying "Please fill in all fields"
+
+@signin7
+Scenario: Failed Sign In - blank username and password
+    Given I open the MyCADM homepage
+    When I click "app.landing.button.signin" button
+    Then I navigate to "Sign in" Page
+    When I click "app.auth.button.signin" button
+    Then I should see a banner saying "Please fill in all fields"
 
 # username validation - leading spaces
 # username validation - trailing spaces
@@ -41,7 +92,7 @@
 # forgot password - expired reset link
 # forgot password - reused reset link
 # forgot password - successful password reset
-# forgot password - login with new password
+# forgot password - Sign In with new password
 # forgot password - old password no longer works
 
 # logout successfully
@@ -51,19 +102,19 @@
 
 # session persists after page refresh
 # session timeout after inactivity
-# session timeout redirects to login page
+# session timeout redirects to Sign In page
 
-# multiple failed login attempts
-# account lockout after failed login threshold
+# multiple failed Sign In attempts
+# account lockout after failed Sign In threshold
 # account unlock process
 
 # unauthenticated user attempts protected page
-# unauthenticated user redirected to login page
+# unauthenticated user redirected to Sign In page
 
-# authenticated user attempts login page
-# authenticated user redirected away from login page
+# authenticated user attempts Sign In page
+# authenticated user redirected away from Sign In page
 
-# verify session cookie created after login
+# verify session cookie created after Sign In
 # verify session cookie removed after logout
 
 # successful new user registration
@@ -73,12 +124,14 @@
 # registration with password mismatch
 # registration required field validation
 # email verification workflow
-# login after registration
+# Sign In after registration
 # delete user account
 
-# --- CORE LOGIN ---
+# --- CORE Sign In ---
 # --- VALIDATION ---
 # --- FORGOT PASSWORD --- 
 # --- SESSION MANAGEMENT ---
 # --- SECURITY ---
 # --- USER REGISTRATION ---
+
+# enter valid email address into email box warning

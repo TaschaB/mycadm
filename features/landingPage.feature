@@ -1,55 +1,55 @@
 Feature: Landing Page
 @landingPage
 
-@landing01
+@landing1
   Scenario: Open MyCADM homepage
     Given I open the MyCADM homepage
     Then the landing page should be displayed
 
-@landing02
+@landing2
   Scenario: Click top Nav Bar About Link
     Given I open the MyCADM homepage
     When I click top nav bar "About" Link 
     Then I navigate to "About mycadm" Page
 
-@landing03
+@landing3
   Scenario: Click top Nav Bar Privacy Link
     Given I open the MyCADM homepage
     When I click top nav bar "Privacy" Link
     Then I navigate to "Privacy & Trust" Page
 
-@landing04
+@landing4
   Scenario: Click Sign In Button
     Given I open the MyCADM homepage
     When I click "app.landing.button.signin" button
     Then I navigate to "Sign in" Page
 
-@landing05
+@landing5
   Scenario: Click First Opt Res Button
     Given I open the MyCADM homepage
     When I click "app.landing.hero.button.signup" button
     Then I navigate to "Your free trial includes:" Page
 
-@landing06
+@landing6
   Scenario: Click First Opt Res Button 2
     Given I open the MyCADM homepage
     When I click "app.landing.pricing.button.signup" button
     Then I navigate to "Your free trial includes:" Page
 
-@landing07
+@landing7
   Scenario: Click Free Trial button
     Given I open the MyCADM homepage
     When I click "app.landing.cta.button.signup" button
     Then I navigate to "Your free trial includes:" Page
 
-@landing08
+@landing8
   Scenario: Click bottom About Link
     Given I open the MyCADM homepage
     When I decline Cookies
     When I click bottom "About" Link
     Then I navigate to "About mycadm" Page
 
-@landing09
+@landing9
   Scenario: Click bottom Privacy Link
     Given I open the MyCADM homepage
     When I decline Cookies
@@ -85,26 +85,26 @@ Feature: Landing Page
     Then I navigate to "Contact Us" Page
 
 # ---- NEGATIVE TEST CASES -----
-@landingNegative01
+@landingNegative1
 Scenario: Cookie banner does not block footer navigation after declining cookies
   Given I open the MyCADM homepage
   When I decline Cookies
   Then the footer navigation should be accessible
 
-  @landingNegative02
+  @landingNegative2
 Scenario: Invalid automation key does not navigate away from landing page
   Given I open the MyCADM homepage
   When I try to click "app.landing.button.fake" button
   Then I should remain on the MyCADM homepage
 
-  @landingNegative05
+  @landingNegative5
 Scenario: Cookie banner decline action is safe when banner is not visible
   Given I open the MyCADM homepage
   When I decline Cookies
   When I decline Cookies
   Then the landing page should be displayed
 
-  @landingNegative06
+  @landingNegative6
 Scenario: Required landing page call-to-action buttons are not missing
   Given I open the MyCADM homepage
   Then the "app.landing.button.signin" button should be visible
