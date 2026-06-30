@@ -10,6 +10,8 @@ export class CustomWorld extends World {
   constructor(options: IWorldOptions) {
     super(options);
   }
+  dialogAppeared?: boolean;
 }
 
 setWorldConstructor(CustomWorld);
+

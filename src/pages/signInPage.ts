@@ -23,4 +23,13 @@ export class SignInPage extends BasePage {
     await this.enterPassword(password);
     await this.clickSignIn();
   }
+
+    async passwordOnly(password: string): Promise<void> {
+    await this.enterPassword(password);
+}
+async expectPasswordToBeVisible(): Promise<void> {
+  const passwordInput = this.page.getByTestId('app.auth.form.password.input');
+
+  await expect(passwordInput).toHaveAttribute('type', 'text');
+}
 }

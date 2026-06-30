@@ -14,5 +14,21 @@
   "validUsernameTrailingSpace": {
     "username": "taschaqa@outlook.com  ",
     "password": "19Mar2025!   "
-  }
+  },
+    "unknownUser": {
+    "username": "doesnotexist@example.com",
+    "password": "Password123!"
+  },
+  "sqlInjectionUsername": {
+    "username": "' OR '1'='1",
+    "password": "Password123!"
+  },
+  "sqlInjectionComment": {
+    "username": "admin'--",
+    "password": "Password123!"
+  }, 
+  "xssInjectionUsername": {
+  "username": "<script>alert('xss')</script>",
+  "password": "Password123!"
+}
 }

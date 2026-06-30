@@ -1,7 +1,7 @@
 Feature: Glue Code generation
 #    script
-    #    npx cucumber-js --require-module ts-node/register --require "src/stepDefinitions/**/*.ts" --tags "@landingNegative06"
+    #    npx cucumber-js --tags "@glueCode" --dry-run
 
 @glueCode
 Scenario: Generate glue code 
-    Then the moon is made of cheese
+Then the password should be visible in the password field 
