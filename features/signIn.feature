@@ -89,16 +89,43 @@ Scenario: password validation - trailing spaces
     When I sign enter trailing password
     Then I should see a banner saying "Sign in failed" 
 
-# username validation - maximum length
-# username validation - exceeds maximum length
-# username validation - special characters
-# username validation - SQL injection attempt
-# username validation - XSS injection attempt
+@signin12
+Scenario: Login rejects SQL injection attempt in username field
+  Given I open the MyCADM homepage
+  When I click "app.landing.button.signin" button
+  Then I navigate to "Sign in" Page
+  When I sign in as "sqlInjectionUsername"
+  Then I should see a banner saying "Sign in failed" 
 
-# password validation - maximum length
-# password validation - exceeds maximum length
-# password validation - special characters
+  @signin13
+Scenario: Login rejects SQL injection attempt in username field
+  Given I open the MyCADM homepage
+  When I click "app.landing.button.signin" button
+  Then I navigate to "Sign in" Page
+  When I sign in as "sqlInjectionComment"
+  Then I should see a banner saying "Sign in failed" 
+
+@signin14
+Scenario: Login rejects XSS attempt in username field
+  Given I open the MyCADM homepage
+  When I click "app.landing.button.signin" button
+  Then I navigate to "Sign in" Page
+  And I am watching for browser dialogs
+  When I sign in as "xssInjectionUsername"
+  Then I should see a banner saying "Sign in failed" 
+  And no browser dialog should appear
+
+
 # password validation - unicode characters
+
+@signin16
+Scenario: View password toggle - show password
+  Given I open the MyCADM homepage
+  When I click "app.landing.button.signin" button
+  Then I navigate to "Sign in" Page
+  When I enter a password into the password field
+  When I click the Show password toggle
+  Then the password should be visible in the password field 
 
 # view password toggle - show password
 # view password toggle - hide password
