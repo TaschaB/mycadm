@@ -7,7 +7,11 @@ module.exports = {
       'src/stepDefinitions/**/*.ts'
     ],
     paths: ['features/**/*.feature'],
-    format: ['progress', 'html:reports/cucumber-report.html'],
+    format: [
+      'progress',
+      'html:reports/cucumber-report.html',
+      'allure-cucumberjs/reporter'
+    ],
     publishQuiet: true
   }
 };
