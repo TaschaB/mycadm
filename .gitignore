@@ -11,12 +11,27 @@ allure-report/
 # Screenshots
 screenshots/
 
-# Build output
+# Build output / coverage
 dist/
+coverage/
 
-# Environment variables
+# Environment / secrets
 .env
+.env.*
+!.env.example
 
-# OS files
+# Editor / OS clutter
+.vscode/
 .DS_Store
 Thumbs.db
+
+# Test output
+allure-results/
+allure-report/
+test-results/
+playwright-report/
+
+# Failure artifacts
+screenshots/
+videos/
+traces/
