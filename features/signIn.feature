@@ -1,7 +1,7 @@
 Feature: Sign In Scenarios
 
 # CORE SIGN IN
-@signin1
+@signin1 @smoke
   Scenario: Successful Sign In
     Given I open the MyCADM homepage
     When I click "app.landing.button.signin" button
@@ -288,7 +288,7 @@ Scenario: Old password no longer works after password reset
 
 
   # LOGOUT
-@signin35
+@signin35 @smoke
 Scenario: Logout successfully
   Given I am signed in as a valid user
   When I log out
@@ -314,8 +314,6 @@ Scenario: Session persists after page refresh
   Given I am signed in as a valid user
   When I refresh the page
   Then I should remain signed in
-
-
 
 @signin39
 Scenario: Session timeout after inactivity

@@ -4,6 +4,7 @@ import { LandingPage } from '../pages/landingPage';
 import { SignInPage } from '../pages/signInPage';
 import { BannerPage } from '../pages/BannerPage';
 import users from '../data/users.json';
+import { validUser } from '../utils/config';
 
 When(
   'I click {string} button',
@@ -24,8 +25,8 @@ Given('I am signed in as a valid user', async function () {
   const signInPage = new SignInPage(this.page);
 
   await signInPage.login(
-    users.validUser.username,
-    users.validUser.password
+    validUser.username,
+    validUser.password
   );
 });
 
