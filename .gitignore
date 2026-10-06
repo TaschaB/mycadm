@@ -21,7 +21,6 @@ coverage/
 !.env.example
 
 # Editor / OS clutter
-.vscode/
 .DS_Store
 Thumbs.db
 
