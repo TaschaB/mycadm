@@ -10,7 +10,7 @@ A lightweight end-to-end automation framework built with Playwright, TypeScript,
 - Node.js
 - Page Object Model
 - JSON environment configuration
-- Cucumber HTML reporting
+- Allure 3 
 
 ## Framework Features
 
@@ -22,7 +22,7 @@ A lightweight end-to-end automation framework built with Playwright, TypeScript,
 - Page Object Model structure
 - Screenshot capture on failed scenarios
 - Severe server error capture for HTTP 400/401/403/404/500/502/503/504 responses
-- HTML report generation
+- Allure 3 reporting
 
 ## Project Structure
 
