@@ -1,6 +1,9 @@
-import { Before, After, Status } from '@cucumber/cucumber';
+import { Before, BeforeAll, After, Status, setDefaultTimeout } from '@cucumber/cucumber';
+import { rmSync } from 'fs';
 import { chromium, firefox, webkit, BrowserType } from '@playwright/test';
 import { CustomWorld } from '../support/world';
+
+setDefaultTimeout(15 * 1000);
 
 const getBrowserType = (): BrowserType => {
   const browserName = process.env.BROWSER?.toLowerCase() || 'chromium';
@@ -15,6 +18,11 @@ const getBrowserType = (): BrowserType => {
       return chromium;
   }
 };
+
+BeforeAll(function () {
+  rmSync('allure-results', { recursive: true, force: true });
+  rmSync('allure-report', { recursive: true, force: true });
+});
 
 Before(async function (this: CustomWorld) {
   const browserType = getBrowserType();
@@ -64,4 +72,12 @@ After(async function (this: CustomWorld, scenario) {
   await this.page?.close();
   await this.context?.close();
   await this.browser?.close();
+
+  console.log('Scenario status:', scenario.result?.status);
+  if (scenario.result?.status === Status.FAILED && this.page) {
+  console.log('Capturing failure screenshot');
+
+  const screenshot = await this.page.screenshot();
+  await this.attach(screenshot, 'image/png');
+}
 });
