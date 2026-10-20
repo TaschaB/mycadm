@@ -28,7 +28,7 @@ Before(async function (this: CustomWorld) {
   const browserType = getBrowserType();
 
   this.browser = await browserType.launch({
-    headless: false,
+    headless: process.env.CI === 'true',
     args: process.env.BROWSER === 'chromium' || !process.env.BROWSER
       ? ['--start-maximized']
       : []
@@ -73,11 +73,5 @@ After(async function (this: CustomWorld, scenario) {
   await this.context?.close();
   await this.browser?.close();
 
-  console.log('Scenario status:', scenario.result?.status);
-  if (scenario.result?.status === Status.FAILED && this.page) {
-  console.log('Capturing failure screenshot');
-
-  const screenshot = await this.page.screenshot();
-  await this.attach(screenshot, 'image/png');
 }
-});
+);
