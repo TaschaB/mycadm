@@ -22,3 +22,5 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Run tests
         run: npx cucumber-js --tags "@signin3"
+        env:
+          validUser: ${{ secrets.validUser }}
